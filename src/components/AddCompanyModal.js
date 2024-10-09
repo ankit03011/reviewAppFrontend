@@ -19,7 +19,7 @@ const AddCompanyModal = ({ onClose, onAddCompany }) => {
     }
     
     try {
-      await axios.post('http://localhost:5000/api/companies/add', formData);
+      await axios.post('https://reviewappnode.onrender.com/api/companies/add', formData);
       onAddCompany();
       onClose();
     } catch (err) {

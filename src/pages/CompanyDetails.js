@@ -14,7 +14,7 @@ const CompanyDetails = () => {
 
   const fetchCompany = useCallback(async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/companies/${id}`);
+      const response = await axios.get(`https://reviewappnode.onrender.com/api/companies/${id}`);
       setCompany(response.data);
     } catch (error) {
       console.error('Error fetching company:', error);
@@ -23,7 +23,7 @@ const CompanyDetails = () => {
 
   const fetchReviews = useCallback(async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/companies/${id}/reviews`);
+      const response = await axios.get(`https://reviewappnode.onrender.com/api/companies/${id}/reviews`);
       setReviews(response.data.reviews);
       setAverageRating(response.data.averageRating);
     } catch (error) {
@@ -38,7 +38,7 @@ const CompanyDetails = () => {
 
   const handleAddReview = async (reviewData) => {
     try {
-      await axios.post(`http://localhost:5000/api/companies/${id}/reviews`, reviewData);
+      await axios.post(`https://reviewappnode.onrender.com/api/companies/${id}/reviews`, reviewData);
       fetchReviews(); 
     } catch (error) {
       console.error('Error adding review:', error);

@@ -15,7 +15,7 @@ const HomePage = () => {
 
   const fetchCompanies = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/companies');
+      const response = await axios.get('https://reviewappnode.onrender.com/api/companies');
       setCompanies(response.data);
       setFilteredCompanies(response.data);
     } catch (error) {
